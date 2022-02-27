@@ -18,7 +18,7 @@ class _ProductItemState extends State<ProductItem> {
     final textScale =width/mockupWidth;
     return Container(
       width:101/mockupWidth*width ,
-      height: 200/mockupHeight*height,
+      height: 150/mockupHeight*height,
       color: Colors.white,
       child: Column(
         children: [

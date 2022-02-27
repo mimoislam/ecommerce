@@ -1,4 +1,5 @@
 import 'package:app/constant.dart';
+import 'package:app/pages/product.dart';
 import 'package:app/widget/product_item.dart';
 import 'package:flutter/material.dart';
 
@@ -171,21 +172,29 @@ class _HomePageState extends State<HomePage> {
                   shrinkWrap: true,
                   crossAxisSpacing: 10/mockupWidth*width,
                   mainAxisSpacing: 20/mockupHeight*height,
-                  childAspectRatio: (101/mockupWidth*width / 200/mockupHeight*height),
+                  childAspectRatio: (101/mockupWidth*width / 150/mockupHeight*height),
 
                   physics:  const NeverScrollableScrollPhysics() ,
                   crossAxisCount: 3,
-                  children: const [
-                    ProductItem(imageUrl: "assets/images/products/women_shoes.png",name: "Ankle Boots",price: 49.99,),
-                    ProductItem(imageUrl: "assets/images/products/backpack.png",name: "Red Scarf",price: 20.58,),
-                    ProductItem(imageUrl: "assets/images/products/scarf.png",name: "Ankle Boots",price: 11.00,),
-                    ProductItem(imageUrl: "assets/images/products/women_shoes.png",name: "Ankle Boots",price: 49.99,),
-                    ProductItem(imageUrl: "assets/images/products/backpack.png",name: "Red Scarf",price: 20.58,),
-                    ProductItem(imageUrl: "assets/images/products/scarf.png",name: "Ankle Boots",price: 11.00,),
-                    ProductItem(imageUrl: "assets/images/products/women_shoes.png",name: "Ankle Boots",price: 49.99,),
-                    ProductItem(imageUrl: "assets/images/products/backpack.png",name: "Red Scarf",price: 20.58,),
-                    ProductItem(imageUrl: "assets/images/products/scarf.png",name: "Ankle Boots",price: 11.00,),
-                    
+                  children:  [
+                    GestureDetector(
+                      onTap:(){
+                        Navigator.pushNamed(context, Product.route,arguments: {'id':1});
+                      },
+                        child: const ProductItem(imageUrl: "assets/images/products/women_shoes.png",name: "Ankle Boots",price: 49.99,)),
+                    GestureDetector(
+                        onTap:(){
+                          Navigator.pushNamed(context, Product.route,arguments: {'id':1});
+                        },
+                        child: const ProductItem(imageUrl: "assets/images/products/backpack.png",name: "Red Scarf",price: 20.58,)),
+                    GestureDetector(
+                        onTap:(){
+                          Navigator.pushNamed(context, Product.route,arguments: {'id':1});
+                        },
+                        child: const ProductItem(imageUrl: "assets/images/products/scarf.png",name: "Ankle Boots",price: 11.00,)),
+
+
+
                   ],
                 ),
               )

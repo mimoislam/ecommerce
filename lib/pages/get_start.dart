@@ -20,10 +20,7 @@ class _GetStartedState extends State<GetStarted> {
     final scale =mockupWidth/width;
     final textScale =width/mockupWidth;
     final paddingTop=MediaQuery.of(context).padding.top;
-    return PixelPerfect(
-      scale: scale,
-      assetPath: "assets/images/1_Sign Up.png",
-      child: Scaffold(
+    return Scaffold(
         body: Container(
           padding: EdgeInsets.only(left: 27/mockupWidth*width,top: (59+paddingTop)/mockupWidth*width),
           child: Column(
@@ -174,7 +171,7 @@ class _GetStartedState extends State<GetStarted> {
             ],
           ),
         ),
-      ),
+     
     );
   }
 }

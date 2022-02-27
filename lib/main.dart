@@ -1,5 +1,6 @@
 import 'package:app/pages/get_start.dart';
 import 'package:app/pages/home.dart';
+import 'package:app/pages/product.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         GetStarted.route: (context)=>  const GetStarted(),
         HomePage.route: (context)=>  const HomePage(),
+        Product.route: (context)=>   Product(),
       },
     );
   }
