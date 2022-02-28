@@ -1,4 +1,10 @@
-#Sun Feb 27 14:56:21 WAT 2022
+#Mon Feb 28 13:11:27 WAT 2022
+base.2=C\:\\Users\\PiteurStudio\\Desktop\\ecommerce\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
+path.2=classes3.dex
+base.1=C\:\\Users\\PiteurStudio\\Desktop\\ecommerce\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
+path.1=classes2.dex
 base.0=C\:\\Users\\PiteurStudio\\Desktop\\ecommerce\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
 path.0=classes.dex

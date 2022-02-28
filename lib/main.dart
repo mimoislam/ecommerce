@@ -3,10 +3,28 @@ import 'package:app/pages/get_start.dart';
 import 'package:app/pages/home.dart';
 import 'package:app/pages/order_accepte.dart';
 import 'package:app/pages/product.dart';
+import 'package:app/proividers/app.dart';
+import 'package:app/proividers/order.dart';
+import 'package:app/proividers/user.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 void main() {
-  runApp(const MyApp());
+   WidgetsFlutterBinding.ensureInitialized();
+
+
+    runApp(MultiProvider(
+        providers:[
+          ChangeNotifierProvider.value(value: AppProvider()),
+          ChangeNotifierProvider.value(value: UserProvider()),
+          ChangeNotifierProvider.value(value: OrderProvider()),
+        ] ,
+        child: const MyApp()));
+
+
+
+
+
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +34,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: Cart.route,
+      initialRoute: GetStarted.route,
       routes: {
         GetStarted.route: (context)=>  const GetStarted(),
         HomePage.route: (context)=>  const HomePage(),
