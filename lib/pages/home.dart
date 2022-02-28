@@ -172,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                   shrinkWrap: true,
                   crossAxisSpacing: 10/mockupWidth*width,
                   mainAxisSpacing: 20/mockupHeight*height,
-                  childAspectRatio: (101/mockupWidth*width / 150/mockupHeight*height),
+                  childAspectRatio: ((101/mockupWidth*width) / (120/mockupHeight*height)),
 
                   physics:  const NeverScrollableScrollPhysics() ,
                   crossAxisCount: 3,
