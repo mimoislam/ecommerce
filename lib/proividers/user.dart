@@ -27,6 +27,16 @@ class UserProvider with ChangeNotifier {
     user!.addToCart(product: product);
 
   }
+  getCart(){
+    return user!.getCart();
+  }
+  addOrder(String id){
+    user!.addToOrder(orderId: id);
+    notifyListeners();
+  }
+  getOrder(){
+    return user!.orders;
+  }
 
 
 }

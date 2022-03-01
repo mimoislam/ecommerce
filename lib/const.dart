@@ -3,7 +3,7 @@ import 'package:app/model/product.dart';
 import 'package:app/model/user.dart';
 
 List <UserModel>users=[
-  UserModel(email: 'benoaie.islam@gmail.com',id: '1',name: "mimo",cart: [],password: "password"),
+  UserModel(email: 'benoaie.islam@gmail.com',id: '1',name: "mimo",cart: [],password: "password",orders: []),
 ];
 
 List products=[

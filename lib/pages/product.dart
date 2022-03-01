@@ -354,7 +354,7 @@ class _ProductState extends State<Product> {
                           Expanded(
                             child: GestureDetector(
                               onTap: () {
-                                //authProvider.addToCart(product);
+                                authProvider.addToCart(item);
                               },
                               child: Container(
                                 padding: const EdgeInsets.symmetric(

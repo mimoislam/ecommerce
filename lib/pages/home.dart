@@ -2,6 +2,7 @@ import 'package:app/const.dart';
 import 'package:app/constant.dart';
 import 'package:app/model/product.dart';
 import 'package:app/pages/cart.dart';
+import 'package:app/pages/order.dart';
 import 'package:app/pages/product.dart' as page;
 import 'package:app/widget/product_item.dart';
 import 'package:flutter/material.dart';
@@ -244,18 +245,24 @@ class _HomePageState extends State<HomePage> {
 
                     ],
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset('assets/images/icons/finished.png',width: 30/mockupWidth*width,),
-                      Text("Orders",style:const TextStyle(
-                          fontFamily: "NeusaNextStd",
-                          fontSize: 15,
-                          color: Color(0xff515C6F)
-                      ),textScaleFactor: scale,),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, OrderPage.route);
 
-                    ],
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/images/icons/finished.png',width: 30/mockupWidth*width,),
+                        Text("Orders",style:const TextStyle(
+                            fontFamily: "NeusaNextStd",
+                            fontSize: 15,
+                            color: Color(0xff515C6F)
+                        ),textScaleFactor: scale,),
+
+                      ],
+                    ),
                   ),
                   GestureDetector(
                     onTap: (){
