@@ -2,9 +2,9 @@ import 'package:app/constant.dart';
 import 'package:flutter/material.dart';
 
 class ProductItem extends StatefulWidget {
-  final String imageUrl,name;
-  final double price ;
-    const ProductItem({required this.imageUrl,required this.name,required this.price});
+   String imageUrl,name;
+   double price ;
+     ProductItem({Key? key,  required this.imageUrl, required this.name, required this.price}) : super(key: key);
   @override
   _ProductItemState createState() => _ProductItemState();
 }

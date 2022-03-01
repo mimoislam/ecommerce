@@ -1,4 +1,9 @@
+import 'dart:async';
+
 import 'package:app/constant.dart';
+import 'package:app/pages/home.dart';
+import 'package:app/pages/product.dart';
+import 'package:app/proividers/app.dart';
 import 'package:app/proividers/user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,6 +23,8 @@ class _LoginFormState extends State<LoginForm> {
     final height=MediaQuery.of(context).size.height;
     final textScale =width/mockupWidth;
     final authProvider=Provider.of<UserProvider>(context);
+    final app=Provider.of<AppProvider>(context);
+
 
     return Column(
       children: [
@@ -98,8 +105,13 @@ class _LoginFormState extends State<LoginForm> {
         SizedBox(height:5 /mockupWidth*width,),
         GestureDetector(
           onTap: (){
-            authProvider.checkLogin(email: emailEditingController.text, password: passwordEditingController.text);
-          },
+            app.changeLoading();
+            bool exist=   authProvider.checkLogin(email: emailEditingController.text, password: passwordEditingController.text);
+
+              Navigator.pushReplacementNamed(context,   HomePage.route);
+
+
+            },
           child: Container(
             margin: EdgeInsets.only(right: 20/mockupWidth*width),
             padding: EdgeInsets.symmetric(horizontal:10/mockupWidth*width,vertical: 3/mockupHeight*height ),

@@ -1,7 +1,11 @@
 import 'package:app/constant.dart';
+import 'package:app/pages/home.dart';
+import 'package:app/proividers/app.dart';
+import 'package:app/widget/loading.dart';
 import 'package:app/widget/login_form.dart';
 import 'package:app/widget/sign_up_form.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 
 class GetStarted extends StatefulWidget {
@@ -15,8 +19,12 @@ class GetStarted extends StatefulWidget {
 
 class _GetStartedState extends State<GetStarted> {
   late PageController pageController;
- int index=0;
+ late int index;
+  List<Widget> pages=[
+    SignUpForm(),
+    LoginForm(),
 
+  ];
   @override
   Widget build(BuildContext context) {
     final width=MediaQuery.of(context).size.width;
@@ -24,13 +32,12 @@ class _GetStartedState extends State<GetStarted> {
     final scale =mockupWidth/width;
     final textScale =width/mockupWidth;
     final paddingTop=MediaQuery.of(context).padding.top;
-    List<Widget> pages=[
-      const SignUpForm(),
-       LoginForm(),
 
-    ];
+    final app=Provider.of<AppProvider>(context);
+    pageController=PageController(initialPage: index);
+
     return Scaffold(
-        body: Container(
+        body: app.isLoading?Loading():Container(
           padding: EdgeInsets.only(left: 27/mockupWidth*width,top: (59+paddingTop)/mockupWidth*width),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -59,8 +66,11 @@ class _GetStartedState extends State<GetStarted> {
                           setState(() {
 
                           });
+
                           pageController.animateToPage(1,
                               duration:const  Duration(milliseconds: 300), curve: Curves.ease);
+
+
                         },
                         child: Text("Log in",style: index==1?title:titleLowOpacity,textScaleFactor: textScale,)),
                     SizedBox(width:40 /mockupWidth*width,),
@@ -72,7 +82,9 @@ class _GetStartedState extends State<GetStarted> {
                 child: PageView(
                   physics: NeverScrollableScrollPhysics(),
                   allowImplicitScrolling: false,
+
                   controller:pageController ,
+
                   onPageChanged: (value) {
                     index=value;
                     setState(() {});
@@ -91,7 +103,7 @@ class _GetStartedState extends State<GetStarted> {
 
   @override
   void initState() {
-    pageController=PageController(initialPage: 0);
+    index=0;
 
     super.initState();
   }

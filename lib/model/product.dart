@@ -9,4 +9,7 @@ class Product{
     required this.id,
 
   });
+  checkId(String id){
+    return id==this.id;
+  }
 }
